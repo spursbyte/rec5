@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  {% if t=='s' %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h3 style="color:rgb(128,0,128)">Sorry! This Anime is not in our database.</h3>
+    <h3 style="color:rgb(128,0,128)">Please check the spelling.</h3>
+    <h3 style="color:rgb(128,0,128)">Or try with another Anime.</h3>
+  </div>
+
+  {% else %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h1 style="color:rgb(128,0,128)">"{{movie}}" is a great choice.</h1>
+    <h3 style="color:rgb(128,0,128)">Here are some more like this</h3>
+  </div>
+
+    <ul class="list-group list-group-flush">
+      {% for m in r %}
+        <li class="list-group-item" style="colorr:rgb(128,0,128)"><strong>{{m|capitalize}}</strong></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock %}
